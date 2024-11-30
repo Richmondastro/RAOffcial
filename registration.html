@@ -134,13 +134,18 @@
       <div class="container">
         <div class="card shadow">
           <div class="card-header">
-            <h4 class="mb-0">The Dark Edge Registration</h4>
+            <h4 class="mb-0 text-white text-center">
+              The Dark Edge Registration
+            </h4>
           </div>
-          <div class="card-body">
-            <form id="registrationForm">
+          <div class="card-body p-5">
+            <form
+              id="registrationForm"
+              action="https://script.google.com/macros/s/AKfycby6_tG9Wrdf8mwcoKRW8WemG3L8s2S6zm2b17IXWIvfIjED3_XTjjoqtZxnCQz6Vep6EQ/exec"
+            >
               <!-- Step 1: School and Leader Details -->
               <div class="step active" id="step1">
-                <h5>School, MIC and Leader Details</h5>
+                <h5 class="text-white">School, MIC and Leader Details</h5>
                 <br />
                 <div class="form-row">
                   <div class="form-group col-md-6">
@@ -151,6 +156,7 @@
                       type="text"
                       class="form-control"
                       id="schoolName"
+                      name="schoolName"
                       placeholder="Enter school name"
                       required
                     />
@@ -159,7 +165,12 @@
                     <label for="teamSelect"
                       >Select Team <span class="text-danger">*</span></label
                     >
-                    <select class="form-control" id="teamSelect" required>
+                    <select
+                      class="form-control"
+                      id="teamSelect"
+                      name="teamSelect"
+                      required
+                    >
                       <option value="">Choose...</option>
                       <option value="A">Team A</option>
                       <option value="B">Team B</option>
@@ -177,6 +188,7 @@
                       type="text"
                       class="form-control"
                       id="masterName"
+                      name="masterName"
                       placeholder="Enter master's name"
                       required
                     />
@@ -190,156 +202,302 @@
                       type="tel"
                       class="form-control"
                       id="masterContact"
+                      name="masterContact"
                       placeholder="Enter contact number"
                       required
                     />
                   </div>
                 </div>
+                <!-- Leader Details -->
+                <h5 class="mt-4 mb-2 text-white">Leader Details</h5>
+
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="leaderName"
-                      >Leader Full Name
-                      <span class="text-danger">*</span></label
+                      >Full Name <span class="text-danger">*</span></label
                     >
                     <input
                       type="text"
                       class="form-control"
                       id="leaderName"
-                      placeholder="Enter leader's full name"
+                      name="leaderName"
+                      placeholder="Enter full name"
                       required
                     />
                   </div>
                   <div class="form-group col-md-6">
                     <label for="leaderGrade"
-                      >Leader Grade <span class="text-danger">*</span></label
+                      >Grade<span class="text-danger">*</span></label
                     >
                     <input
                       type="text"
                       class="form-control"
                       id="leaderGrade"
-                      placeholder="Enter leader's grade"
+                      name="leaderGrade"
+                      placeholder="Enter grade"
                       required
                     />
                   </div>
                 </div>
-                <button type="button" class="btn btn-dark" id="nextStep1">
-                  Next
-                </button>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="leaderEmail"
+                      >Email <span class="text-danger">*</span></label
+                    >
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="leaderEmail"
+                      name="leaderEmail"
+                      placeholder="Enter email"
+                      required
+                    />
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="leaderWhastapp"
+                      >WhatsApp No <span class="text-danger">*</span></label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="leaderWhastapp"
+                      name="leaderWhastapp"
+                      placeholder="Enter leader's WhatsApp"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-12 team__btn text-center text-md-right">
+                  <button class="registration-btn primary-btn" id="nextStep1">
+                    Next
+                  </button>
+                </div>
               </div>
 
               <!-- Step 2: Member Details (1 & 2) -->
               <div class="step" id="step2">
-                <h5>Step 2: Member Details (1 & 2)</h5>
-                <!-- Member 1 -->
+                <h5 class="mt-4 mb-2 text-white">Member 2 Details</h5>
                 <div class="form-row">
                   <div class="form-group col-md-6">
-                    <label
-                      >Member 1 Full Name
-                      <span class="text-danger">*</span></label
+                    <label for="member2fullName"
+                      >Full Name <span class="text-danger">*</span></label
                     >
                     <input
                       type="text"
                       class="form-control"
+                      id="member2fullName"
+                      name="member2fullName"
                       placeholder="Enter full name"
                       required
                     />
                   </div>
                   <div class="form-group col-md-6">
-                    <label
-                      >Member 1 Grade <span class="text-danger">*</span></label
+                    <label for="member2grade"
+                      >Grade <span class="text-danger">*</span></label
                     >
                     <input
                       type="text"
                       class="form-control"
+                      id="member2grade"
+                      name="member2grade"
                       placeholder="Enter grade"
                       required
                     />
                   </div>
                 </div>
-                <!-- Member 2 -->
+
                 <div class="form-row">
                   <div class="form-group col-md-6">
-                    <label
-                      >Member 2 Full Name
-                      <span class="text-danger">*</span></label
+                    <label for="member2email"
+                      >Email <span class="text-danger">*</span></label
                     >
                     <input
                       type="text"
                       class="form-control"
+                      id="member2email"
+                      name="member2email"
+                      placeholder="Enter email"
+                      required
+                    />
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="member2whatsapp"
+                      >WhatsApp No <span class="text-danger">*</span></label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="member2whatsapp"
+                      name="member2whatsapp"
+                      placeholder="Enter WhatsApp number"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <h5 class="mt-4 mb-2 text-white">Member 3 Details</h5>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label>Full Name <span class="text-danger">*</span></label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="member3fullName"
+                      name="member3fullName"
                       placeholder="Enter full name"
                       required
                     />
                   </div>
                   <div class="form-group col-md-6">
-                    <label
-                      >Member 2 Grade <span class="text-danger">*</span></label
+                    <label for="member3grade"
+                      >Grade <span class="text-danger">*</span></label
                     >
                     <input
                       type="text"
                       class="form-control"
+                      id="member3grade"
+                      name="member3grade"
                       placeholder="Enter grade"
                       required
                     />
                   </div>
                 </div>
-                <button type="button" class="btn btn-secondary" id="prevStep2">
-                  Previous
-                </button>
-                <button type="button" class="btn btn-dark" id="nextStep2">
-                  Next
-                </button>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="member3email"
+                      >Email <span class="text-danger">*</span></label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="member3email"
+                      name="member3email"
+                      placeholder="Enter email"
+                      required
+                    />
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="member3whatsapp"
+                      >WhatsApp No <span class="text-danger">*</span></label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="member3whatsapp"
+                      name="member3whatsapp"
+                      placeholder="Enter WhatsApp number"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-12 team__btn">
+                  <div class="row">
+                    <div class="col-6 text-left">
+                      <button
+                        class="registration-btn primary-btn"
+                        id="prevStep2"
+                      >
+                        Previous
+                      </button>
+                    </div>
+                    <div class="col-6 text-right">
+                      <button
+                        class="registration-btn primary-btn"
+                        id="nextStep2"
+                      >
+                        Next
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <!-- Step 3: Member Details (3-5) -->
               <div class="step" id="step3">
-                <h5>Step 3: Member Details (3-5)</h5>
-                <!-- Member 3 -->
+                <h5 class="mt-4 mb-2 text-white">Member 4 Details</h5>
                 <div class="form-row">
                   <div class="form-group col-md-6">
-                    <label
-                      >Member 3 Full Name
-                      <span class="text-danger">*</span></label
+                    <label for="member4fullName"
+                      >Full Name <span class="text-danger">*</span></label
                     >
                     <input
                       type="text"
                       class="form-control"
+                      id="member4fullName"
+                      name="member4fullName"
                       placeholder="Enter full name"
                       required
                     />
                   </div>
                   <div class="form-group col-md-6">
-                    <label
-                      >Member 3 Grade <span class="text-danger">*</span></label
+                    <label for="member4grade">
+                      Grade <span class="text-danger">*</span></label
                     >
                     <input
                       type="text"
                       class="form-control"
+                      id="member4grade"
+                      name="member4grade"
                       placeholder="Enter grade"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="member4email"
+                      >Email <span class="text-danger">*</span></label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="member4email"
+                      name="member4email"
+                      placeholder="Enter email"
+                      required
+                    />
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="member4whatsapp"
+                      >WhatsApp No <span class="text-danger">*</span></label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="member4whatsapp"
+                      name="member4whatsapp"
+                      placeholder="Enter WhatsApp number"
                       required
                     />
                   </div>
                 </div>
                 <!-- Member 4 -->
+                <h5 class="mt-4 mb-2 text-white">Member 5 Details</h5>
                 <div class="form-row">
                   <div class="form-group col-md-6">
-                    <label
-                      >Member 4 Full Name
+                    <label for="member5fullName">
+                      Full Name
                       <span class="text-danger">*</span></label
                     >
                     <input
                       type="text"
                       class="form-control"
+                      id="member5fullName"
+                      name="member5fullName"
                       placeholder="Enter full name"
                       required
                     />
                   </div>
                   <div class="form-group col-md-6">
-                    <label
-                      >Member 4 Grade <span class="text-danger">*</span></label
+                    <label for="member5grade">
+                      Grade <span class="text-danger">*</span></label
                     >
                     <input
                       type="text"
                       class="form-control"
+                      id="member5grade"
+                      name="member5grade"
                       placeholder="Enter grade"
                       required
                     />
@@ -348,33 +506,53 @@
                 <!-- Member 5 -->
                 <div class="form-row">
                   <div class="form-group col-md-6">
-                    <label
-                      >Member 5 Full Name
-                      <span class="text-danger">*</span></label
+                    <label for="member5email"
+                      >Email <span class="text-danger">*</span></label
                     >
                     <input
                       type="text"
                       class="form-control"
-                      placeholder="Enter full name"
+                      id="member5email"
+                      name="member5email"
+                      placeholder="Enter email"
                       required
                     />
                   </div>
                   <div class="form-group col-md-6">
-                    <label
-                      >Member 5 Grade <span class="text-danger">*</span></label
+                    <label for="member5whatsapp"
+                      >WhatsApp No<span class="text-danger">*</span></label
                     >
                     <input
                       type="text"
                       class="form-control"
+                      id="member5whatsapp"
+                      name="member5whatsapp"
                       placeholder="Enter grade"
                       required
                     />
                   </div>
                 </div>
-                <button type="button" class="btn btn-secondary" id="prevStep3">
-                  Previous
-                </button>
-                <button type="submit" class="btn btn-dark">Submit</button>
+                <div class="col-lg-12 team__btn">
+                  <div class="row">
+                    <div class="col-6 text-left">
+                      <button
+                        class="registration-btn primary-btn"
+                        id="prevStep3"
+                      >
+                        Previous
+                      </button>
+                    </div>
+                    <div class="col-6 text-right">
+                      <button
+                        type="submit"
+                        class="registration-btn primary-btn"
+                        id="nextStep2"
+                      >
+                        Submit
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </form>
           </div>
@@ -530,10 +708,34 @@
 
         document
           .getElementById("registrationForm")
-          .addEventListener("submit", (e) => {
-            e.preventDefault();
-            alert("Form submitted successfully!");
-            // Handle form submission
+          .addEventListener("submit", function (e) {
+            e.preventDefault(); // Prevent default submission behavior
+
+            const form = e.target;
+            const isValid = form.checkValidity(); // Check built-in HTML5 validation
+
+            if (!isValid) {
+              form.reportValidity(); // Highlight invalid fields
+            } else {
+              const data = new FormData(form); // Collect form data
+              const action = form.action; // Form action URL
+
+              fetch(action, {
+                method: "POST",
+                body: data,
+              })
+                .then((response) => {
+                  if (response.ok) {
+                    alert("Form submitted successfully!");
+                    console.log("Success:", response);
+                  } else {
+                    alert("Error submitting form");
+                  }
+                })
+                .catch((error) => {
+                  alert("An error occurred: " + error.message);
+                });
+            }
           });
       });
     </script>

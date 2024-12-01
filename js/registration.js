@@ -2,164 +2,107 @@ var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
 
 function showTab(n) {
+  // This function will display the specified tab of the form ...
   var x = document.getElementsByClassName("tab");
   x[n].style.display = "block";
-
-  if (n === 0) {
+  // ... and fix the Previous/Next buttons:
+  if (n == 0) {
     document.getElementById("prevBtn").style.display = "none";
   } else {
     document.getElementById("prevBtn").style.display = "inline";
   }
-
-  if (n === x.length - 1) {
+  if (n == x.length - 1) {
     document.getElementById("nextBtn").innerHTML = "Submit";
   } else {
     document.getElementById("nextBtn").innerHTML = "Next";
   }
-
+  // ... and run a function that displays the correct step indicator:
   fixStepIndicator(n);
 }
 
 function nextPrev(n) {
+  // This function will figure out which tab to display
   var x = document.getElementsByClassName("tab");
-
-  if (n === 1 && !validateForm()) return false;
-
+  // Exit the function if any field in the current tab is invalid:
+  if (n == 1 && !validateForm()) return false;
+  // Hide the current tab:
   x[currentTab].style.display = "none";
-  currentTab += n;
-
+  // Increase or decrease the current tab by 1:
+  currentTab = currentTab + n;
+  // if you have reached the end of the form... :
   if (currentTab >= x.length) {
-    // Prevent default submission here and let the submit handler take over
-    document
-      .getElementById("registrationForm")
-      .dispatchEvent(new Event("submit"));
+    //...the form gets submitted:
+    document.getElementById("registrationForm").submit();
     return false;
   }
-
+  // Otherwise, display the correct tab:
   showTab(currentTab);
 }
 
 function validateForm() {
+  // This function deals with validation of the form fields
   var x,
     y,
     i,
     valid = true;
   x = document.getElementsByClassName("tab");
   y = x[currentTab].getElementsByTagName("input");
-
+  // A loop that checks every input field in the current tab:
   for (i = 0; i < y.length; i++) {
-    if (y[i].value === "") {
+    // If a field is empty...
+    if (y[i].value == "") {
+      // add an "invalid" class to the field:
       y[i].className += " invalid";
+      // and set the current valid status to false:
       valid = false;
     }
   }
-
+  // If the valid status is true, mark the step as finished and valid:
   if (valid) {
     document.getElementsByClassName("step")[currentTab].className += " finish";
   }
-
-  return valid;
+  return valid; // return the valid status
 }
 
 function fixStepIndicator(n) {
+  // This function removes the "active" class of all steps...
   var i,
     x = document.getElementsByClassName("step");
   for (i = 0; i < x.length; i++) {
     x[i].className = x[i].className.replace(" active", "");
   }
+  //... and adds the "active" class to the current step:
   x[n].className += " active";
 }
+
 document
   .getElementById("registrationForm")
   .addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    // Get button and loading elements
-    const nextBtn = document.getElementById("nextBtn");
-    const buttonText = document.getElementById("buttonText");
-    const loadingSpinner = document.getElementById("loadingSpinner");
-
-    // Show loading state
-    buttonText.style.display = "none";
-    loadingSpinner.style.display = "inline-block";
-    nextBtn.disabled = true; // Disable the button to prevent multiple clicks
+    e.preventDefault(); // Prevent default submission behavior
 
     const form = e.target;
-    const data = new FormData(form);
-    const action = form.action;
+    const isValid = form.checkValidity(); // Check built-in HTML5 validation
 
-    fetch(action, {
-      method: "POST",
-      body: data,
-    })
-      .then((response) => response.json())
-      .then((result) => {
-        if (result.result === "success") {
-          showModal("successModal");
-          console.log("Row:", result.row);
-        } else if (result.result === "error") {
-          showModal("failureModal");
-          console.error("Error:", result.error);
-        }
+    if (!isValid) {
+      form.reportValidity(); // Highlight invalid fields
+    } else {
+      const data = new FormData(form); // Collect form data
+      const action = form.action; // Form action URL
+
+      fetch(action, {
+        method: "POST",
+        body: data,
       })
-      .catch((error) => {
-        showModal("failureModal");
-        console.error("Network error:", error.message);
-      })
-      .finally(() => {
-        // Reset button state
-        buttonText.style.display = "inline";
-        loadingSpinner.style.display = "none";
-        nextBtn.disabled = false; // Re-enable the button
-      });
+        .then((response) => {
+          if (response.ok) {
+            alert("Form submitted successfully!");
+            console.log("Success:", response);
+          } else {
+            alert("Error submitting form");
+          }
+        })
+        .catch((error) => {
+          alert("An error occurred: " + error.message);
+        });
+    }
   });
-
-// // Attach form submission logic once
-// document
-//   .getElementById("registrationForm")
-//   .addEventListener("submit", function (e) {
-//     e.preventDefault();
-
-//     const form = e.target;
-//     const data = new FormData(form);
-//     const action = form.action;
-
-//     fetch(action, {
-//       method: "POST",
-//       body: data,
-//     })
-//       .then((response) => response.json()) // Parse the JSON response
-//       .then((result) => {
-//         if (result.result === "success") {
-//           showModal("successModal");
-//           console.log("Row:", result.row); // Log the returned row number
-//         } else if (result.result === "error") {
-//           showModal("failureModal");
-//           console.error("Error:", result.error); // Log the error message
-//         }
-//       })
-//       .catch((error) => {
-//         showModal("failureModal");
-//         console.error("Network error:", error.message);
-//       });
-//   });
-
-// Show modal function
-function showModal(modalId) {
-  const modal = document.getElementById(modalId);
-  if (modal) {
-    modal.style.display = "block";
-  }
-}
-
-function closeModal(modalId, redirect = false) {
-  const modal = document.getElementById(modalId);
-  if (modal) {
-    modal.style.display = "none";
-  }
-
-  // Redirect if required
-  if (redirect) {
-    window.location.href = "darkedge.html";
-  }
-}

@@ -6,6 +6,10 @@
     <meta name="keywords" content="astro, unica, creative, html" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="google-site-verification"
+      content="XDU_dchByaMeRwZKqJyOOWGaao67qkLw-ZDF9Lx5Z34"
+    />
     <title>ASSARC | Registration</title>
     <link
       rel="shortcut icon"
@@ -35,7 +39,6 @@
       href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
@@ -80,16 +83,18 @@
                 <a href="https://www.facebook.com/assarc" target="_blank"
                   ><i class="fa fa-facebook"></i
                 ></a>
-                <a href="https://www.instagram.com/assarc_astro" target="_blank"
+                <a href="https://www.instagram.com/_assarc_" target="_blank"
                   ><i class="fa fa-instagram"></i
                 ></a>
                 <a href="mailto:assarcmail@gmail.com" target="_blank"
                   ><i class="fa fa-envelope"></i
                 ></a>
-                <a href="https://wa.me/94703642997" target="_blank"
+                <a href="https://wa.me/message/7OL2YEIG3EJYC1" target="_blank"
                   ><i class="fa fa-whatsapp"></i
                 ></a>
-                <a href="www.youtube.com/@richastro2936" target="_blank"
+                <a
+                  href="https://youtube.com/@richastro2936?si=N7KSF64lV97DBWlw"
+                  target="_blank"
                   ><i class="fa fa-youtube-play"></i
                 ></a>
               </div>
@@ -131,7 +136,7 @@
               The Dark Edge Registration
             </h4>
           </div>
-          <div class="card-body p-5">
+          <div class="card-body p-1">
             <form
               id="registrationForm"
               action="https://script.google.com/macros/s/AKfycby0jaXm0BmVtNNZXPpwwPZTUQgdpIUjoAquASYcdE6XY-Zgmty2DzxZGvGENt3MxntJuA/exec"
@@ -527,7 +532,7 @@
                     id="prevBtn"
                     onclick="nextPrev(-1)"
                   >
-                    Next
+                    Previous
                   </button>
                   <button
                     type="button"
@@ -539,6 +544,7 @@
                   </button>
                 </div>
               </div>
+
               <!-- <div style="overflow: auto">
                 <div style="float: right">
                   <button type="button" id="prevBtn" onclick="nextPrev(-1)">
@@ -554,7 +560,6 @@
                 <span class="step"></span>
                 <span class="step"></span>
                 <span class="step"></span>
-                <span class="step"></span>
               </div>
             </form>
           </div>
@@ -563,6 +568,31 @@
     </section>
     <!-- About Section End -->
 
+    <!-- Modals -->
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('successModal')">&times;</span>
+        <h2>Submission Successful</h2>
+        <p>Your form was submitted successfully. Thank you!</p>
+        <button class="modal-btn" onclick="closeModal('successModal')">
+          Close
+        </button>
+      </div>
+    </div>
+
+    <!-- Failure Modal -->
+    <div id="failureModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('failureModal')">&times;</span>
+        <h2>Submission Failed</h2>
+        <p>There was an issue submitting your form. Please try again later.</p>
+        <button class="modal-btn" onclick="closeModal('failureModal')">
+          Close
+        </button>
+      </div>
+    </div>
+
     <!-- Footer Section Begin -->
     <footer class="footer">
       <div class="container">
@@ -570,27 +600,23 @@
           <div class="row">
             <div class="col">
               <div class="footer__top__social">
-                <a href="https://www.facebook.com/assarc" target="_blank">
-                  <i class="fa fa-facebook"> </i>
-                </a>
-                <a
-                  href="https://www.instagram.com/assarc_astro"
-                  target="_blank"
-                >
-                  <i class="fa fa-instagram"> </i>
-                </a>
-                <a href="mailto:assarcmail@gmail.com" target="_blank">
-                  <i class="fa fa-envelope"> </i>
-                </a>
-                <a href="https://wa.me/message/7OL2YEIG3EJYC1" target="_blank">
-                  <i class="fa fa-whatsapp"> </i>
-                </a>
+                <a href="https://www.facebook.com/assarc" target="_blank"
+                  ><i class="fa fa-facebook"></i
+                ></a>
+                <a href="https://www.instagram.com/_assarc_" target="_blank"
+                  ><i class="fa fa-instagram"></i
+                ></a>
+                <a href="mailto:assarcmail@gmail.com" target="_blank"
+                  ><i class="fa fa-envelope"></i
+                ></a>
+                <a href="https://wa.me/message/7OL2YEIG3EJYC1" target="_blank"
+                  ><i class="fa fa-whatsapp"></i
+                ></a>
                 <a
                   href="https://youtube.com/@richastro2936?si=N7KSF64lV97DBWlw"
                   target="_blank"
-                >
-                  <i class="fa fa-youtube-play"> </i>
-                </a>
+                  ><i class="fa fa-youtube-play"></i
+                ></a>
               </div>
             </div>
           </div>

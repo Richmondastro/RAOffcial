@@ -1338,7 +1338,8 @@ input.invalid {
 /* Modal content box */
 .modal-content {
   font-family: "Poppins", sans-serif;
-  background-color: white;
+  background: #100028;
+  color: white;
   margin: 15% auto; /* Centered vertically */
   padding: 20px;
   border: 2px;

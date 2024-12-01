@@ -35,14 +35,7 @@
       href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700"
       rel="stylesheet"
     />
-    <style>
-      .step {
-        display: none;
-      }
-      .step.active {
-        display: block;
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
@@ -141,12 +134,13 @@
           <div class="card-body p-5">
             <form
               id="registrationForm"
-              action="https://script.google.com/macros/s/AKfycby6_tG9Wrdf8mwcoKRW8WemG3L8s2S6zm2b17IXWIvfIjED3_XTjjoqtZxnCQz6Vep6EQ/exec"
+              action="https://script.google.com/macros/s/AKfycby0jaXm0BmVtNNZXPpwwPZTUQgdpIUjoAquASYcdE6XY-Zgmty2DzxZGvGENt3MxntJuA/exec"
             >
               <!-- Step 1: School and Leader Details -->
-              <div class="step active" id="step1">
+              <div class="tab">
                 <h5 class="text-white">School, MIC and Leader Details</h5>
                 <br />
+
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="schoolName"
@@ -158,6 +152,7 @@
                       id="schoolName"
                       name="schoolName"
                       placeholder="Enter school name"
+                      oninput="this.classList.remove('invalid')"
                       required
                     />
                   </div>
@@ -169,6 +164,7 @@
                       class="form-control"
                       id="teamSelect"
                       name="teamSelect"
+                      oninput="this.classList.remove('invalid')"
                       required
                     >
                       <option value="">Choose...</option>
@@ -178,6 +174,7 @@
                     </select>
                   </div>
                 </div>
+
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="masterName"
@@ -190,6 +187,7 @@
                       id="masterName"
                       name="masterName"
                       placeholder="Enter master's name"
+                      oninput="this.classList.remove('invalid')"
                       required
                     />
                   </div>
@@ -204,13 +202,14 @@
                       id="masterContact"
                       name="masterContact"
                       placeholder="Enter contact number"
+                      oninput="this.classList.remove('invalid')"
                       required
                     />
                   </div>
                 </div>
+
                 <!-- Leader Details -->
                 <h5 class="mt-4 mb-2 text-white">Leader Details</h5>
-
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="leaderName"
@@ -221,20 +220,21 @@
                       class="form-control"
                       id="leaderName"
                       name="leaderName"
+                      oninput="this.classList.remove('invalid')"
                       placeholder="Enter full name"
                       required
                     />
                   </div>
                   <div class="form-group col-md-6">
-                    <label for="leaderGrade"
-                      >Grade<span class="text-danger">*</span></label
+                    <label for="leaderAge"
+                      >Date of Birth<span class="text-danger">*</span></label
                     >
                     <input
-                      type="text"
+                      type="date"
                       class="form-control"
-                      id="leaderGrade"
-                      name="leaderGrade"
-                      placeholder="Enter grade"
+                      id="leaderAge"
+                      name="leaderAge"
+                      oninput="this.classList.remove('invalid')"
                       required
                     />
                   </div>
@@ -249,6 +249,7 @@
                       class="form-control"
                       id="leaderEmail"
                       name="leaderEmail"
+                      oninput="this.classList.remove('invalid')"
                       placeholder="Enter email"
                       required
                     />
@@ -258,7 +259,7 @@
                       >WhatsApp No <span class="text-danger">*</span></label
                     >
                     <input
-                      type="text"
+                      type="tel"
                       class="form-control"
                       id="leaderWhastapp"
                       name="leaderWhastapp"
@@ -267,16 +268,11 @@
                     />
                   </div>
                 </div>
-                <div class="col-lg-12 team__btn text-center text-md-right">
-                  <button class="registration-btn primary-btn" id="nextStep1">
-                    Next
-                  </button>
-                </div>
               </div>
 
               <!-- Step 2: Member Details (1 & 2) -->
-              <div class="step" id="step2">
-                <h5 class="mt-4 mb-2 text-white">Member 2 Details</h5>
+              <div class="tab">
+                <h5 class="mt-4 mb-2 text-white">Second Member Details</h5>
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="member2fullName"
@@ -287,20 +283,21 @@
                       class="form-control"
                       id="member2fullName"
                       name="member2fullName"
+                      oninput="this.classList.remove('invalid')"
                       placeholder="Enter full name"
                       required
                     />
                   </div>
                   <div class="form-group col-md-6">
-                    <label for="member2grade"
-                      >Grade <span class="text-danger">*</span></label
+                    <label for="member2age"
+                      >Date of Birth <span class="text-danger">*</span></label
                     >
                     <input
-                      type="text"
+                      type="date"
                       class="form-control"
-                      id="member2grade"
-                      name="member2grade"
-                      placeholder="Enter grade"
+                      id="member2age"
+                      name="member2age"
+                      oninput="this.classList.remove('invalid')"
                       required
                     />
                   </div>
@@ -317,6 +314,7 @@
                       id="member2email"
                       name="member2email"
                       placeholder="Enter email"
+                      oninput="this.classList.remove('invalid')"
                       required
                     />
                   </div>
@@ -325,17 +323,18 @@
                       >WhatsApp No <span class="text-danger">*</span></label
                     >
                     <input
-                      type="text"
+                      type="tel"
                       class="form-control"
                       id="member2whatsapp"
                       name="member2whatsapp"
                       placeholder="Enter WhatsApp number"
+                      oninput="this.classList.remove('invalid')"
                       required
                     />
                   </div>
                 </div>
 
-                <h5 class="mt-4 mb-2 text-white">Member 3 Details</h5>
+                <h5 class="mt-4 mb-2 text-white">Third Member Details</h5>
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label>Full Name <span class="text-danger">*</span></label>
@@ -349,15 +348,16 @@
                     />
                   </div>
                   <div class="form-group col-md-6">
-                    <label for="member3grade"
-                      >Grade <span class="text-danger">*</span></label
+                    <label for="member3age"
+                      >Date of Birth <span class="text-danger">*</span></label
                     >
                     <input
-                      type="text"
+                      type="date"
                       class="form-control"
-                      id="member3grade"
-                      name="member3grade"
-                      placeholder="Enter grade"
+                      id="member3age"
+                      name="member3age"
+                      placeholder="Enter age"
+                      oninput="this.classList.remove('invalid')"
                       required
                     />
                   </div>
@@ -373,6 +373,7 @@
                       id="member3email"
                       name="member3email"
                       placeholder="Enter email"
+                      oninput="this.classList.remove('invalid')"
                       required
                     />
                   </div>
@@ -381,40 +382,21 @@
                       >WhatsApp No <span class="text-danger">*</span></label
                     >
                     <input
-                      type="text"
+                      type="tel"
                       class="form-control"
                       id="member3whatsapp"
                       name="member3whatsapp"
                       placeholder="Enter WhatsApp number"
+                      oninput="this.classList.remove('invalid')"
                       required
                     />
-                  </div>
-                </div>
-                <div class="col-lg-12 team__btn">
-                  <div class="row">
-                    <div class="col-6 text-left">
-                      <button
-                        class="registration-btn primary-btn"
-                        id="prevStep2"
-                      >
-                        Previous
-                      </button>
-                    </div>
-                    <div class="col-6 text-right">
-                      <button
-                        class="registration-btn primary-btn"
-                        id="nextStep2"
-                      >
-                        Next
-                      </button>
-                    </div>
                   </div>
                 </div>
               </div>
 
               <!-- Step 3: Member Details (3-5) -->
-              <div class="step" id="step3">
-                <h5 class="mt-4 mb-2 text-white">Member 4 Details</h5>
+              <div class="tab">
+                <h5 class="mt-4 mb-2 text-white">Fourth Member Details</h5>
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="member4fullName"
@@ -430,15 +412,16 @@
                     />
                   </div>
                   <div class="form-group col-md-6">
-                    <label for="member4grade">
-                      Grade <span class="text-danger">*</span></label
+                    <label for="member4age">
+                      Date of Birth <span class="text-danger">*</span></label
                     >
                     <input
-                      type="text"
+                      type="date"
                       class="form-control"
-                      id="member4grade"
-                      name="member4grade"
-                      placeholder="Enter grade"
+                      id="member4age"
+                      name="member4age"
+                      placeholder="Enter age"
+                      oninput="this.classList.remove('invalid')"
                       required
                     />
                   </div>
@@ -455,6 +438,7 @@
                       id="member4email"
                       name="member4email"
                       placeholder="Enter email"
+                      oninput="this.classList.remove('invalid')"
                       required
                     />
                   </div>
@@ -463,17 +447,18 @@
                       >WhatsApp No <span class="text-danger">*</span></label
                     >
                     <input
-                      type="text"
+                      type="tel"
                       class="form-control"
                       id="member4whatsapp"
                       name="member4whatsapp"
                       placeholder="Enter WhatsApp number"
+                      oninput="this.classList.remove('invalid')"
                       required
                     />
                   </div>
                 </div>
-                <!-- Member 4 -->
-                <h5 class="mt-4 mb-2 text-white">Member 5 Details</h5>
+
+                <h5 class="mt-4 mb-2 text-white">Fifth Member Details</h5>
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="member5fullName">
@@ -490,20 +475,20 @@
                     />
                   </div>
                   <div class="form-group col-md-6">
-                    <label for="member5grade">
-                      Grade <span class="text-danger">*</span></label
+                    <label for="member5age">
+                      Date of Birth <span class="text-danger">*</span></label
                     >
                     <input
-                      type="text"
+                      type="date"
                       class="form-control"
-                      id="member5grade"
-                      name="member5grade"
-                      placeholder="Enter grade"
+                      id="member5age"
+                      name="member5age"
+                      placeholder="Enter age"
                       required
                     />
                   </div>
                 </div>
-                <!-- Member 5 -->
+
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="member5email"
@@ -523,7 +508,7 @@
                       >WhatsApp No<span class="text-danger">*</span></label
                     >
                     <input
-                      type="text"
+                      type="tel"
                       class="form-control"
                       id="member5whatsapp"
                       name="member5whatsapp"
@@ -532,27 +517,44 @@
                     />
                   </div>
                 </div>
-                <div class="col-lg-12 team__btn">
-                  <div class="row">
-                    <div class="col-6 text-left">
-                      <button
-                        class="registration-btn primary-btn"
-                        id="prevStep3"
-                      >
-                        Previous
-                      </button>
-                    </div>
-                    <div class="col-6 text-right">
-                      <button
-                        type="submit"
-                        class="registration-btn primary-btn"
-                        id="nextStep2"
-                      >
-                        Submit
-                      </button>
-                    </div>
-                  </div>
+              </div>
+
+              <div style="overflow: auto">
+                <div style="float: right">
+                  <button
+                    type="button"
+                    class="registration-btn primary-btn"
+                    id="prevBtn"
+                    onclick="nextPrev(-1)"
+                  >
+                    Next
+                  </button>
+                  <button
+                    type="button"
+                    class="registration-btn primary-btn"
+                    id="nextBtn"
+                    onclick="nextPrev(1)"
+                  >
+                    Next
+                  </button>
                 </div>
+              </div>
+              <!-- <div style="overflow: auto">
+                <div style="float: right">
+                  <button type="button" id="prevBtn" onclick="nextPrev(-1)">
+                    Previous
+                  </button>
+                  <button type="button" id="nextBtn" onclick="nextPrev(1)">
+                    Next
+                  </button>
+                </div>
+              </div> -->
+              <!-- Circles which indicates the steps of the form: -->
+              <div style="text-align: center; margin-top: 40px">
+                <span class="step"></span>
+                <span class="step"></span>
+                <span class="step"></span>
+                <span class="step"></span>
               </div>
             </form>
           </div>
@@ -580,17 +582,20 @@
                 <a href="mailto:assarcmail@gmail.com" target="_blank">
                   <i class="fa fa-envelope"> </i>
                 </a>
-                <a href="https://wa.me/94703642997" target="_blank">
+                <a href="https://wa.me/message/7OL2YEIG3EJYC1" target="_blank">
                   <i class="fa fa-whatsapp"> </i>
                 </a>
-                <a href="www.youtube.com/@richastro2936" target="_blank">
+                <a
+                  href="https://youtube.com/@richastro2936?si=N7KSF64lV97DBWlw"
+                  target="_blank"
+                >
                   <i class="fa fa-youtube-play"> </i>
                 </a>
               </div>
             </div>
           </div>
         </div>
-        <div class="footer__option">
+        <!-- <div class="footer__option">
           <div class="row text-center text-md-left">
             <div class="col-lg-4 col-md-12 col-sm-12">
               <div class="footer__option__item text-lg-left text-center">
@@ -611,7 +616,6 @@
               </div>
             </div>
             <div class="col-lg-4 col-md-6">
-              <!--col-lg-2 -->
               <div class="footer__option__item text-md-center">
                 <h5>Who we are</h5>
                 <ul>
@@ -631,7 +635,6 @@
               </div>
             </div>
             <div class="col-lg-4 col-md-6">
-              <!--col-lg-2 -->
               <div class="footer__option__item text-md-center">
                 <h5>Our work</h5>
                 <ul>
@@ -650,21 +653,8 @@
                 </ul>
               </div>
             </div>
-            <!-- <div class="col-lg-4 col-md-12">
-              <div class="footer__option__item">
-                <h5>Newsletter</h5>
-                <p>
-                  Exploring the cosmos, inspiring future astronomers join our
-                  exciting journey!
-                </p>
-                <form action="mailto:assarcmail@gmail.com">
-                  <input type="text" placeholder="Email" />
-                  <button type="submit"><i class="fa fa-send"></i></button>
-                </form>
-              </div>
-            </div> -->
           </div>
-        </div>
+        </div> -->
         <div class="footer__copyright">
           <div class="row">
             <div class="col-lg-12 text-center">
@@ -673,8 +663,7 @@
                 <script>
                   document.write(new Date().getFullYear());
                 </script>
-                All rights reserved |
-                <a href="www.assarc.org" target="_blank"> Richastro </a>
+                All rights reserved | Richastro
               </p>
             </div>
           </div>
@@ -682,63 +671,6 @@
       </div>
     </footer>
     <!-- Footer Section End -->
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const steps = document.querySelectorAll(".step");
-        let currentStep = 0;
-
-        const nextButtons = document.querySelectorAll('[id^="nextStep"]');
-        const prevButtons = document.querySelectorAll('[id^="prevStep"]');
-
-        nextButtons.forEach((button, index) => {
-          button.addEventListener("click", () => {
-            steps[currentStep].classList.remove("active");
-            currentStep++;
-            steps[currentStep].classList.add("active");
-          });
-        });
-
-        prevButtons.forEach((button, index) => {
-          button.addEventListener("click", () => {
-            steps[currentStep].classList.remove("active");
-            currentStep--;
-            steps[currentStep].classList.add("active");
-          });
-        });
-
-        document
-          .getElementById("registrationForm")
-          .addEventListener("submit", function (e) {
-            e.preventDefault(); // Prevent default submission behavior
-
-            const form = e.target;
-            const isValid = form.checkValidity(); // Check built-in HTML5 validation
-
-            if (!isValid) {
-              form.reportValidity(); // Highlight invalid fields
-            } else {
-              const data = new FormData(form); // Collect form data
-              const action = form.action; // Form action URL
-
-              fetch(action, {
-                method: "POST",
-                body: data,
-              })
-                .then((response) => {
-                  if (response.ok) {
-                    alert("Form submitted successfully!");
-                    console.log("Success:", response);
-                  } else {
-                    alert("Error submitting form");
-                  }
-                })
-                .catch((error) => {
-                  alert("An error occurred: " + error.message);
-                });
-            }
-          });
-      });
-    </script>
 
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
@@ -748,6 +680,7 @@
     <script src="js/masonry.pkgd.min.js"></script>
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
+    <script src="js/registration.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

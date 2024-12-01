@@ -69,12 +69,20 @@ function fixStepIndicator(n) {
   }
   x[n].className += " active";
 }
-
-// Attach form submission logic once
 document
   .getElementById("registrationForm")
   .addEventListener("submit", function (e) {
     e.preventDefault();
+
+    // Get button and loading elements
+    const nextBtn = document.getElementById("nextBtn");
+    const buttonText = document.getElementById("buttonText");
+    const loadingSpinner = document.getElementById("loadingSpinner");
+
+    // Show loading state
+    buttonText.style.display = "none";
+    loadingSpinner.style.display = "inline-block";
+    nextBtn.disabled = true; // Disable the button to prevent multiple clicks
 
     const form = e.target;
     const data = new FormData(form);
@@ -84,21 +92,57 @@ document
       method: "POST",
       body: data,
     })
-      .then((response) => response.json()) // Parse the JSON response
+      .then((response) => response.json())
       .then((result) => {
         if (result.result === "success") {
           showModal("successModal");
-          console.log("Row:", result.row); // Log the returned row number
+          console.log("Row:", result.row);
         } else if (result.result === "error") {
           showModal("failureModal");
-          console.error("Error:", result.error); // Log the error message
+          console.error("Error:", result.error);
         }
       })
       .catch((error) => {
         showModal("failureModal");
         console.error("Network error:", error.message);
+      })
+      .finally(() => {
+        // Reset button state
+        buttonText.style.display = "inline";
+        loadingSpinner.style.display = "none";
+        nextBtn.disabled = false; // Re-enable the button
       });
   });
+
+// // Attach form submission logic once
+// document
+//   .getElementById("registrationForm")
+//   .addEventListener("submit", function (e) {
+//     e.preventDefault();
+
+//     const form = e.target;
+//     const data = new FormData(form);
+//     const action = form.action;
+
+//     fetch(action, {
+//       method: "POST",
+//       body: data,
+//     })
+//       .then((response) => response.json()) // Parse the JSON response
+//       .then((result) => {
+//         if (result.result === "success") {
+//           showModal("successModal");
+//           console.log("Row:", result.row); // Log the returned row number
+//         } else if (result.result === "error") {
+//           showModal("failureModal");
+//           console.error("Error:", result.error); // Log the error message
+//         }
+//       })
+//       .catch((error) => {
+//         showModal("failureModal");
+//         console.error("Network error:", error.message);
+//       });
+//   });
 
 // Show modal function
 function showModal(modalId) {
@@ -108,10 +152,14 @@ function showModal(modalId) {
   }
 }
 
-// Close modal function
-function closeModal(modalId) {
+function closeModal(modalId, redirect = false) {
   const modal = document.getElementById(modalId);
   if (modal) {
     modal.style.display = "none";
+  }
+
+  // Redirect if required
+  if (redirect) {
+    window.location.href = "darkedge.html";
   }
 }

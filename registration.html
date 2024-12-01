@@ -134,7 +134,7 @@
           <div class="card-body p-5">
             <form
               id="registrationForm"
-              action="https://script.google.com/macros/s/AKfycby0jaXm0BmVtNNZXPpwwPZTUQgdpIUjoAquASYcdE6XY-Zgmty2DzxZGvGENt3MxntJuA/exec"
+              action="https://script.google.com/macros/s/AKfycbwqj175b4gPCjvAMsTKfPRDZs__Xz6vexB8qX1ydfCefa2kiTnzFSMV2VFOLTJh18ma/exec"
             >
               <!-- Step 1: School and Leader Details -->
               <div class="tab">
@@ -527,7 +527,7 @@
                     id="prevBtn"
                     onclick="nextPrev(-1)"
                   >
-                    Next
+                    Previous
                   </button>
                   <button
                     type="button"
@@ -535,28 +535,13 @@
                     id="nextBtn"
                     onclick="nextPrev(1)"
                   >
-                    <span id="buttonText">Next</span>
-                    <span
-                      id="loadingSpinner"
-                      class="spinner"
-                      style="display: none"
-                    ></span>
-                  </button>
-                </div>
-              </div>
-              <!-- <div style="overflow: auto">
-                <div style="float: right">
-                  <button type="button" id="prevBtn" onclick="nextPrev(-1)">
-                    Previous
-                  </button>
-                  <button type="button" id="nextBtn" onclick="nextPrev(1)">
                     Next
                   </button>
                 </div>
-              </div> -->
+              </div>
+
               <!-- Circles which indicates the steps of the form: -->
               <div style="text-align: center; margin-top: 40px">
-                <span class="step"></span>
                 <span class="step"></span>
                 <span class="step"></span>
                 <span class="step"></span>
@@ -567,6 +552,50 @@
       </div>
     </section>
     <!-- About Section End -->
+
+    <div id="spinner" style="display: none">
+      <div class="registration-loader"></div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+      <div class="modal-content">
+        <h2 class="text-dark">Submission Successful</h2>
+        <p class="text-dark">
+          <span class="bg-success">Your form was submitted successfully. </span
+          ><br />
+          Thank you! <br />
+          Check your email to join our WhatsApp Group.
+        </p>
+        <button
+          class="modal-btn primary-btn"
+          onclick="redirectToPage('./darkedge.html')"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+
+    <!-- Failure Modal -->
+    <div id="failureModal" class="modal">
+      <div class="modal-content">
+        <h2 class="text-dark">Submission Failed</h2>
+        <p class="text-dark">
+          <span class="text-warning"
+            >There was an issue submitting your form. </span
+          ><br />
+          <span class="text-info"
+            >Please click here to fill the goolge form.</span
+          >
+        </p>
+        <button
+          class="modal-btn primary-btn"
+          onclick="redirectToPage('./registration.html')"
+        >
+          Submit the Google Form
+        </button>
+      </div>
+    </div>
 
     <!-- Footer Section Begin -->
     <footer class="footer">

@@ -218,7 +218,7 @@
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="leaderName"
-                      >Full Name <span class="text-danger">*</span></label
+                      >Name <span class="text-danger">*</span></label
                     >
                     <input
                       type="text"
@@ -226,7 +226,7 @@
                       id="leaderName"
                       name="leaderName"
                       oninput="this.classList.remove('invalid')"
-                      placeholder="Enter full name"
+                      placeholder="Enter your name"
                       required
                     />
                   </div>
@@ -281,7 +281,7 @@
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="member2fullName"
-                      >Full Name <span class="text-danger">*</span></label
+                      >Name <span class="text-danger">*</span></label
                     >
                     <input
                       type="text"
@@ -289,7 +289,7 @@
                       id="member2fullName"
                       name="member2fullName"
                       oninput="this.classList.remove('invalid')"
-                      placeholder="Enter full name"
+                      placeholder="Enter your name"
                       required
                     />
                   </div>
@@ -342,13 +342,13 @@
                 <h5 class="mt-4 mb-2 text-white">Third Member Details</h5>
                 <div class="form-row">
                   <div class="form-group col-md-6">
-                    <label>Full Name <span class="text-danger">*</span></label>
+                    <label>Name <span class="text-danger">*</span></label>
                     <input
                       type="text"
                       class="form-control"
                       id="member3fullName"
                       name="member3fullName"
-                      placeholder="Enter full name"
+                      placeholder="Enter your name"
                       required
                     />
                   </div>
@@ -405,14 +405,14 @@
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="member4fullName"
-                      >Full Name <span class="text-danger">*</span></label
+                      >Name <span class="text-danger">*</span></label
                     >
                     <input
                       type="text"
                       class="form-control"
                       id="member4fullName"
                       name="member4fullName"
-                      placeholder="Enter full name"
+                      placeholder="Enter your name"
                       required
                     />
                   </div>
@@ -467,7 +467,7 @@
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="member5fullName">
-                      Full Name
+                      Name
                       <span class="text-danger">*</span></label
                     >
                     <input
@@ -475,7 +475,7 @@
                       class="form-control"
                       id="member5fullName"
                       name="member5fullName"
-                      placeholder="Enter full name"
+                      placeholder="Enter your name"
                       required
                     />
                   </div>
@@ -540,7 +540,12 @@
                     id="nextBtn"
                     onclick="nextPrev(1)"
                   >
-                    Next
+                    <span id="buttonText">Next</span>
+                    <span
+                      id="loadingSpinner"
+                      class="spinner"
+                      style="display: none"
+                    ></span>
                   </button>
                 </div>
               </div>
@@ -572,10 +577,12 @@
     <!-- Success Modal -->
     <div id="successModal" class="modal">
       <div class="modal-content">
-        <span class="close" onclick="closeModal('successModal')">&times;</span>
+        <span class="close" onclick="closeModal('successModal', true)"
+          >&times;</span
+        >
         <h2>Submission Successful</h2>
         <p>Your form was submitted successfully. Thank you!</p>
-        <button class="modal-btn" onclick="closeModal('successModal')">
+        <button class="primary-btn" onclick="closeModal('successModal', true)">
           Close
         </button>
       </div>
@@ -587,7 +594,7 @@
         <span class="close" onclick="closeModal('failureModal')">&times;</span>
         <h2>Submission Failed</h2>
         <p>There was an issue submitting your form. Please try again later.</p>
-        <button class="modal-btn" onclick="closeModal('failureModal')">
+        <button class="primary-btn" onclick="closeModal('failureModal')">
           Close
         </button>
       </div>

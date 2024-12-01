@@ -1,3 +1,19 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("instructionModal");
+  const closeModalButton = document.getElementById("closeInstructionModal");
+
+  closeModalButton.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  // Optionally, close the modal if the user clicks outside of it
+  window.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+});
+
 var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
 

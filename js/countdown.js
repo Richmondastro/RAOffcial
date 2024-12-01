@@ -24,6 +24,6 @@ var x = setInterval(function () {
   if (distance < 0) {
     clearInterval(x);
     document.getElementById("countdownTimer").innerHTML =
-      "<span class='register-text bg-info'>First Round Registrations</span><br /><br /><a href='#' class='primary-btn'>Register your Team</a>";
+      "<span class='register-text bg-info'>First Round Registrations</span><br /><br /><a href='./registration.html' class='primary-btn'>Register your Team</a>";
   }
 }, 1000);

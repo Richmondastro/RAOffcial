@@ -590,11 +590,6 @@ section {
   font-size: 50px;
 }
 
-#howcompetitionworks,
-#rules {
-  scroll-margin-top: 60px; /* Adjust this value to match your header height */
-}
-
 /*---------------------
   Work
 -----------------------*/
@@ -1255,90 +1250,6 @@ input.invalid {
   position: relative;
   z-index: 1;
 }
-
-/* Spinner for loading button */
-.spinner {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  border: 2px solid #f3f3f3; /* Light grey */
-  border-top: 2px solid #007bff; /* Blue */
-  border-radius: 50%;
-  animation: spin 0.8s linear infinite;
-  margin-left: 8px;
-}
-
-/* Spin animation */
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* Modal container */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
-}
-
-/* Modal content box */
-.modal-content {
-  background-color: #100028;
-  margin: 15% auto; /* Centered vertically */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  max-width: 400px;
-  text-align: center;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* Close button */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-}
-
-/* Modal button
-.modal-btn {
-  display: inline-block;
-  font-size: 15px;
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  padding: 14px 32px 12px;
-  background: none;
-  outline: none;
-  border: none;
-  color: #ffffff;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  position: relative;
-  z-index: 1;
-}
-
-.modal-btn:hover {
-  background-color: #0056b3;
-} */
 
 /*---------------------
   Logo

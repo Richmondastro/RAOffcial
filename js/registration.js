@@ -64,8 +64,9 @@ function validateForm() {
   y = x[currentTab].getElementsByTagName("input");
 
   for (i = 0; i < y.length; i++) {
-    if (y[i].value === "") {
-      y[i].className += " invalid";
+    // Skip validation for optional fields
+    if (y[i].hasAttribute("required") && y[i].value === "") {
+      y[i].className += " invalid"; // Highlight invalid field
       valid = false;
     }
   }
@@ -74,7 +75,7 @@ function validateForm() {
     document.getElementsByClassName("step")[currentTab].className += " finish";
   }
 
-  return valid;
+  return valid; // Proceed if all required fields are valid
 }
 
 function fixStepIndicator(n) {

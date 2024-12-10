@@ -1977,6 +1977,53 @@ input.invalid {
   border-color: #e1e1e1;
 }
 
+/*--------------------------------- 404 -----------------------------*/
+.notfound {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif; /* Set font to Poppins */
+  background-color: #100028; /* Very dark blue background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #ffffff; /* White text for high contrast */
+  animation: fadeIn 2s ease-in-out; /* Fade-in animation for the entire page */
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 10px #003b8b, 0 0 40px #003b8b;
+  }
+  50% {
+    box-shadow: 0 0 20px #0078ff, 0 0 50px #0078ff;
+  }
+  100% {
+    box-shadow: 0 0 10px #003b8b, 0 0 40px #003b8b;
+  }
+}
+
+.notfound-container {
+  text-align: center;
+  color: #ffffff; /* Ensures readability */
+  animation: fadeIn 1.5s ease-in-out; /* Fade-in animation for the container */
+}
+
+.notfound h1 {
+  font-size: 8rem;
+  margin: 0;
+  color: #0078ff; /* Bright blue for heading */
+  font-weight: 700; /* Bold font for emphasis */
+  animation: fadeIn 1s ease-out; /* Slight delay for smoother entrance */
+}
+
+.notfound p {
+  font-size: 1.5rem;
+  margin: 10px 0 20px;
+  color: #b0c4de; /* Light steel blue for paragraph text */
+  font-weight: 400; /* Regular weight for body text */
+}
+
 /*--------------------------------- Responsive Media Quaries -----------------------------*/
 @media only screen and (min-width: 1200px) {
   .container {

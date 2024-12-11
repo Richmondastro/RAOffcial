@@ -240,16 +240,6 @@ const schoolCodes = [
     SchoolCode: "RBG-A",
   },
   {
-    SchoolName: "Rathnavali Balika Vidyalaya Gampaha",
-    Team: "B",
-    SchoolCode: "RBG-B",
-  },
-  {
-    SchoolName: "Rathnavali Balika Vidyalaya Gampaha",
-    Team: "C",
-    SchoolCode: "RBG-C",
-  },
-  {
     SchoolName: "Royal College Colombo",
     Team: "A",
     SchoolCode: "RCC-A",

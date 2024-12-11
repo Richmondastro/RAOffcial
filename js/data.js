@@ -10,6 +10,7 @@ const results = [
   {
     Place: "1",
     SchoolName: "Richmond College, Galle",
+    Team: "A",
     TeamCode: "xxx-xxx-xx",
     Marks: 100,
   },

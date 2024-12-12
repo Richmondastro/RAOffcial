@@ -2281,6 +2281,10 @@ input.invalid {
     grid-template-columns: 1fr 1fr;
   }
 
+  .news-post img {
+    height: auto;
+  }
+
   .portfolio__filter li {
     padding: 6px 15px;
   }
@@ -2410,6 +2414,10 @@ input.invalid {
 
   .news-list {
     grid-template-columns: 1fr;
+  }
+
+  .news-post img {
+    height: auto;
   }
 
   .slicknav_menu {

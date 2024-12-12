@@ -1552,6 +1552,33 @@ input.invalid {
 }
 
 /*---------------------
+  News
+-----------------------*/
+
+.news-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.news-post {
+  padding: 20px;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.news-post:hover {
+  transform: scale(1.25);
+}
+
+.news-post img {
+  width: 100%;
+  height: 25rem;
+  border-radius: 8px;
+}
+
+/*---------------------
   Portfolio
 -----------------------*/
 .portfolio {
@@ -2250,6 +2277,10 @@ input.invalid {
     padding: 10px;
   }
 
+  .news-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .portfolio__filter li {
     padding: 6px 15px;
   }
@@ -2375,6 +2406,10 @@ input.invalid {
   .hero__slider.owl-carousel .owl-dots {
     max-width: auto;
     padding: 0 15px;
+  }
+
+  .news-list {
+    grid-template-columns: 1fr;
   }
 
   .slicknav_menu {

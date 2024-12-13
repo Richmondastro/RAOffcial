@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting...</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <section
+      style="
+        min-height: 100vh;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h1 class="text-white">Redirecting...</h1>
+            <p>
+              If the redirection does not happen automatically, click the button
+              below.
+            </p>
+            <div class="fallback">
+              <button
+                class="primary-btn registration-btn"
+                onclick="manualRedirect()"
+              >
+                Go to Dark Edge Overview
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      window.location.href = "https://darkedge.assarc.org/";
+
+      // Fallback redirection
+      function manualRedirect() {
+        window.location.href = "https://darkedge.assarc.org/";
+      }
+    </script>
+  </body>
+</html>

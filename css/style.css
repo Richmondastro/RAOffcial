@@ -1559,7 +1559,7 @@ input.invalid {
   padding-top: 0;
   overflow: hidden;
   background-image: url("../img/team-bg1.jpg"),
-    linear-gradient(rgba(0, 0, 0, 0.700), rgba(0, 0, 0, 0.700));
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
 }
 
 .news-list {
@@ -1583,6 +1583,110 @@ input.invalid {
   width: 100%;
   height: auto;
   border-radius: 8px;
+}
+
+/*---------------------
+  Achievements
+-----------------------*/
+.achievements {
+  background: #100028;
+  padding: 100px 0;
+  background: url("../img/nebula/stars.jpg") no-repeat center center fixed;
+}
+
+.achievement-header {
+  text-align: center;
+  padding: 20px 0;
+  background-color: rgba(
+    17,
+    34,
+    64,
+    0.9
+  ); /* Semi-transparent overlay for better readability */
+  border-bottom: 2px solid #64ffda; /* Accent line below the header */
+}
+
+.achievement-header h1 {
+  font-size: 2.5em;
+  margin: 0;
+  color: #64ffda; /* Light green for the main title */
+  font-weight: 600; /* Semi-bold for the title */
+}
+
+.achievement-header p {
+  font-size: 1em;
+  margin-top: 10px;
+  color: #e0e0e0; /* Subtle text color for description */
+  font-weight: 300; /* Light weight for tagline */
+}
+
+/* Achievements Container */
+.achievements-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 40px;
+  background-color: rgba(
+    10,
+    25,
+    47,
+    0.8
+  ); /* Semi-transparent background for the container */
+  border-radius: 15px; /* Rounded corners for the container */
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+.achievement-card {
+  background-color: #1a083d; /* Darker blue for cards */
+  border-radius: 10px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Shadow effect */
+  width: 300px;
+  text-align: center;
+  padding: 20px;
+  margin: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievement-card:hover {
+  transform: translateY(-10px); /* Move card upward */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5); /* Stronger shadow on hover */
+}
+
+.achievement-card-image {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.achievement-card:hover .card-image {
+  transform: scale(1.05); /* Slight zoom-in on hover */
+}
+
+h3 {
+  margin: 10px 0;
+  font-size: 1.2em;
+  color: #64ffda; /* Light green text */
+  font-weight: 600; /* Semi-bold for headings */
+}
+
+p {
+  font-size: 0.95em;
+  line-height: 1.6;
+  font-weight: 300; /* Light weight for paragraph text */
+}
+
+@media (max-width: 768px) {
+  .achievements-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .achievement-card {
+    width: 90%;
+  }
 }
 
 /*---------------------

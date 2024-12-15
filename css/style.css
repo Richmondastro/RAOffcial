@@ -543,13 +543,20 @@ section {
   margin-bottom: 0;
 }
 
+.register-text-div {
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+}
+
 .register-text {
   color: #ffffff;
   font-size: 1.2rem;
   font-weight: 300;
-  margin-bottom: 0;
-  padding: 0.25rem;
-  border-radius: 10px;
+  /* margin-bottom: 0;
+  padding: 0.25rem; */
 }
 
 .day-counter {
@@ -2474,6 +2481,14 @@ p {
 
   .dark-edge-title {
     font-size: 2rem;
+  }
+
+  .register-text {
+    font-size: 1rem;
+  }
+
+  .register-text-div {
+    padding: 0.25rem 0.5rem;
   }
 
   .services__title p {

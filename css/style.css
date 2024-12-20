@@ -269,6 +269,97 @@ section {
   }
 }
 /*---------------------
+  Popup Modal - Notification
+-----------------------*/
+.popup-modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.815); /* Black w/ opacity */
+}
+
+/* Style for the image container with position relative */
+.popup-modal-content {
+  position: relative; /* To position the hover text on the image */
+  margin: 0 auto;
+  margin-top: 8rem;
+  padding: 1rem;
+  border: 1px solid #888;
+  width: fit-content;
+  text-align: center;
+  border-radius: 10px;
+}
+
+/* Style for the image */
+.popup-modal-content img {
+  width: 100%; /* Ensure the image takes up the full width */
+  max-width: 500px; /* You can adjust the max width */
+  cursor: pointer;
+  transition: opacity 0.3s ease; /* Smooth transition for opacity */
+}
+
+/* Hover effect to darken the image */
+.popup-modal-content img:hover {
+  opacity: 0.7; /* Dim the image */
+}
+
+/* Close button */
+.close-button {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.close-button:hover {
+  color: #ff0000; /* Highlight color when hovering */
+}
+
+/* Hover message positioned on top of the image */
+.hover-message {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust for perfect centering */
+  font-size: 18px;
+  color: white;
+  opacity: 0; /* Initially hidden */
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+  padding: 10px 20px;
+  border-radius: 5px;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out; /* Smooth fade-in and fade-out */
+}
+
+/* Show hover text when hovering over the image */
+.popup-modal-content img:hover + .hover-message {
+  opacity: 1; /* Make text visible */
+}
+
+/*---------------------
+  Media Queries for Mobile View
+-----------------------*/
+@media (max-width: 768px) {
+  .popup-modal-content {
+    width: 80%; /* Set modal content width to 80% of viewport width */
+  }
+
+  .popup-modal-content img {
+    max-width: 100%; /* Ensure image scales within 80% container */
+  }
+}
+
+/*---------------------
   Header
 -----------------------*/
 .header {

@@ -14,6 +14,7 @@ async function fetchContent() {
     const response = await fetch(apiUrl);
     if (!response.ok) throw new Error("Failed to fetch data");
     const data = await response.json();
+
     const assets = await fetchAssets(data.includes?.Asset || []);
     renderContent(data.items, assets);
   } catch (error) {
@@ -32,25 +33,52 @@ async function fetchAssets(assets) {
   return assetMap;
 }
 
-// Render Content Items (without title)
+// Render Content Items
 function renderContent(items, assets) {
   const contentContainer = document.getElementById("news-list");
   contentContainer.innerHTML = items
     .map((item) => {
       const fields = item.fields;
-      const imageUrl = assets[fields.newsImage.sys.id];
-      const description = fields.description || "No description available.";
+      const imageUrl = assets[fields.newsImage?.sys.id]; // Check if newsImage exists
+      const fullDescription = fields.newsd1 || "No description available."; // Full description
+      const truncatedDescription = fullDescription.length > 150 ? fullDescription.slice(0, 150) + "..." : fullDescription;
 
       return `
         <div class="news-post">
           <img src="${imageUrl}" alt="News Image" />
           <div class="news-post-content">
-            <div class="news-description">${description}</div>
+            <div id="description-${item.sys.id}" class="news-description">${truncatedDescription}</div>
+            ${fullDescription.length > 150 ? 
+              `<a href="#" class="toggle-btn" onclick="toggleDescription(event, '${item.sys.id}', this)">Read More</a>` 
+              : ''}
+            <div id="full-description-${item.sys.id}" class="full-description" style="display: none;">
+              <p>${fullDescription}</p>
+            </div>
           </div>
         </div>
       `;
     })
     .join("");
+}
+
+// Toggle full description and change button text
+function toggleDescription(event, id, button) {
+  event.preventDefault();
+  const descriptionElement = document.getElementById(`description-${id}`);
+  const fullDescriptionElement = document.getElementById(`full-description-${id}`);
+
+  // Check if the full description is currently visible
+  if (fullDescriptionElement.style.display === "none") {
+    // Show full description and change button text to "Close"
+    descriptionElement.style.display = "none";
+    fullDescriptionElement.style.display = "block";
+    button.innerText = "Close";
+  } else {
+    // Hide full description and change button text back to "Read More"
+    descriptionElement.style.display = "block";
+    fullDescriptionElement.style.display = "none";
+    button.innerText = "Read More";
+  }
 }
 
 // Load Content on Page Load

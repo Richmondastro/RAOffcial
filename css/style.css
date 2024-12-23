@@ -1668,13 +1668,18 @@ input.invalid {
 }
 
 .news-post {
-  /* padding: 20px; */
   border-radius: 12px;
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background: rgba(255, 255, 255, 0.1); /* Slightly transparent background for the box */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+  padding: 15px; /* Space inside the box */
+  overflow: hidden;
 }
 
 .news-post:hover {
-  transform: scale(1.1);
+  transform: scale(1.05); /* Slight scaling on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* More prominent shadow on hover */
 }
 
 .news-post img {
@@ -1682,6 +1687,26 @@ input.invalid {
   height: auto;
   border-radius: 8px;
 }
+
+.news-post-content {
+  margin-top: 10px;
+  color: #fff;
+  text-align: center; /* Centers text inside the box */
+}
+
+.news-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #fff; /* Ensures white color for the title */
+}
+
+.news-description {
+  font-size: 1rem;
+  color: #ddd; /* Light white for description text */
+  line-height: 1.5;
+}
+
 
 /*---------------------
   Achievements

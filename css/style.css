@@ -1652,8 +1652,10 @@ input.invalid {
 /*---------------------
   News
 -----------------------*/
+
+
 .news {
-  background: #100028;
+  background: rgba(16, 0, 40, 0.8); /* Main background with transparency */
   padding-top: 0;
   overflow: hidden;
   background-image: url("../img/team-bg1.jpg"),
@@ -1670,16 +1672,15 @@ input.invalid {
 .news-post {
   border-radius: 12px;
   transition: transform 0.3s, box-shadow 0.3s;
-  background: rgba(255, 255, 255, 0.1); /* Slightly transparent background for the box */
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for depth */
-  padding: 15px; /* Space inside the box */
-  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1); /* Transparent background for box */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 15px;
 }
 
 .news-post:hover {
-  transform: scale(1.05); /* Slight scaling on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* More prominent shadow on hover */
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 .news-post img {
@@ -1691,21 +1692,46 @@ input.invalid {
 .news-post-content {
   margin-top: 10px;
   color: #fff;
-  text-align: center; /* Centers text inside the box */
-}
-
-.news-title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: #fff; /* Ensures white color for the title */
+  text-align: center;
 }
 
 .news-description {
   font-size: 1rem;
-  color: #ddd; /* Light white for description text */
-  line-height: 1.5;
+  color: #ddd;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0); /* Fully transparent background */
+  border-radius: 8px;
+  margin-bottom: 10px;
 }
+
+
+.read-more {
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.8); /* Transparent black background for Read More button */
+  padding: 8px 15px;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s ease;
+}
+
+.read-more:hover {
+  background: rgba(0, 0, 0, 1); /* Fully black background on hover */
+}
+
+/* Full description with black transparent background */
+.full-description {
+  display: none;
+  font-size: 1rem;
+  color: #ddd;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.8); /* Black transparent background */
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+
+
 
 
 /*---------------------

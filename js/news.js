@@ -48,12 +48,11 @@ function renderContent(items, assets) {
           <img src="${imageUrl}" alt="News Image" />
           <div class="news-post-content">
             <div id="description-${item.sys.id}" class="news-description">${truncatedDescription}</div>
-            ${fullDescription.length > 150 ? 
-              `<a href="#" class="toggle-btn" onclick="toggleDescription(event, '${item.sys.id}', this)">Read More</a>` 
-              : ''}
             <div id="full-description-${item.sys.id}" class="full-description" style="display: none;">
               <p>${fullDescription}</p>
+              <a href="#" class="toggle-btn" onclick="toggleDescription(event, '${item.sys.id}', this)">Close</a>
             </div>
+            <a href="#" class="toggle-btn" id="read-more-${item.sys.id}" onclick="toggleDescription(event, '${item.sys.id}', this)">Read More</a>
           </div>
         </div>
       `;
@@ -66,18 +65,19 @@ function toggleDescription(event, id, button) {
   event.preventDefault();
   const descriptionElement = document.getElementById(`description-${id}`);
   const fullDescriptionElement = document.getElementById(`full-description-${id}`);
+  const readMoreButton = document.getElementById(`read-more-${id}`);
 
   // Check if the full description is currently visible
   if (fullDescriptionElement.style.display === "none") {
-    // Show full description and change button text to "Close"
+    // Show full description and hide Read More button
     descriptionElement.style.display = "none";
     fullDescriptionElement.style.display = "block";
-    button.innerText = "Close";
+    readMoreButton.style.display = "none";
   } else {
-    // Hide full description and change button text back to "Read More"
+    // Hide full description and show Read More button again
     descriptionElement.style.display = "block";
     fullDescriptionElement.style.display = "none";
-    button.innerText = "Read More";
+    readMoreButton.style.display = "inline-block"; // Show "Read More" button again
   }
 }
 

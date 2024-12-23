@@ -32,17 +32,21 @@ async function fetchAssets(assets) {
   return assetMap;
 }
 
-// Render Content Items
+// Render Content Items (without title)
 function renderContent(items, assets) {
   const contentContainer = document.getElementById("news-list");
   contentContainer.innerHTML = items
     .map((item) => {
       const fields = item.fields;
       const imageUrl = assets[fields.newsImage.sys.id];
+      const description = fields.description || "No description available.";
 
       return `
         <div class="news-post">
-          <img src="${imageUrl}" alt="${fields.title}" />
+          <img src="${imageUrl}" alt="News Image" />
+          <div class="news-post-content">
+            <div class="news-description">${description}</div>
+          </div>
         </div>
       `;
     })

@@ -1,5 +1,5 @@
 // Set the date we're counting down to
-var countDownDate = new Date("Jan 11, 2025 09:00:00").getTime();
+var countDownDate = new Date("Jan 11, 2025 07:00:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function () {
@@ -19,7 +19,18 @@ var x = setInterval(function () {
   // Display the result in the element with id="demo"
   document.getElementById(
     "countdownNew"
-  ).innerHTML = `<span class='register-text text-center'>Second Round Will be Happened in</span> <br /><br /> <p class='bg-dark day-counter'>${days}D ${hours}H ${minutes}m ${seconds}s </p>`;
+  ).innerHTML = `<div class="text-center text-white">
+  <span class='register-text'>Final Round In</span> <br />
+  <p class='bg-dark day-counter'>${days}D ${hours}H ${minutes}m ${seconds}s</p><br />
+    <span class='text-white-50'>
+    11.01.2025 | 08.00 AM <br />
+    <a href="https://maps.app.goo.gl/441Ygzde4tECKnax6" target="_blank" class="text-info">
+      Richmond College 📍
+    </a>
+  </span>
+
+</div>
+  `;
 
   // If the count down is finished, write some text
   if (distance < 0) {

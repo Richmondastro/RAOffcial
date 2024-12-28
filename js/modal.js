@@ -14,7 +14,7 @@ window.onload = function () {
 
   // Add click event to the image for redirection
   modalImage.addEventListener("click", function () {
-    window.location.href = "https://darkedge.assarc.org/overview"; // Redirect to the overview page
+    window.location.href = "https://darkedge.assarc.org/#rules"; // Redirect to the overview page
   });
 
   // Add click event to the close button

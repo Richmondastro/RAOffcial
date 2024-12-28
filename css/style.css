@@ -2709,3 +2709,112 @@ p {
     box-shadow: 0 0 6px 2px white, 0 0 15px 5px white;
   }
 }
+
+/* Board Section */
+.officials-board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  margin-top: -40px; /* Remove any top margin */
+  padding-top: 0; /* Remove any padding at the top */
+}
+
+/* President Card */
+.president-card {
+  background: linear-gradient(135deg, #004080, #00264d); /* Dark Blue Gradient */
+  color: white;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  width: 250px; /* Smaller width */
+  box-shadow: 0 5px 15px rgba(0, 51, 102, 0.5);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.president-card img {
+  width: 100px; /* Adjust image size */
+  height: 100px;
+  border-radius: 50%; /* Circular image */
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 2px solid #00c3ff; /* Light blue border */
+}
+
+.president-card h2 {
+  font-size: 1.2rem; /* Slightly smaller font */
+  margin: 0;
+}
+
+.president-card p {
+  font-size: 1rem;
+  margin: 5px 0 0 0;
+}
+
+/* Official Row Layout */
+.official-row {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  width: 80%;
+  flex-wrap: wrap; /* Ensure it wraps */
+}
+
+.official-card {
+  background: linear-gradient(135deg, #003366, #001f3f); /* Darker Blue Gradient */
+  color: #00c3ff; /* Light Blue Text */
+  border: 1px solid #00c3ff; /* Thinner border */
+  border-radius: 6px; /* Slightly smaller radius */
+  padding: 10px; /* Reduced padding */
+  text-align: center;
+  min-width: 120px; /* Smaller minimum width */
+  flex: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.official-card img {
+  width: 80px; /* Adjust image size */
+  height: 80px;
+  border-radius: 50%; /* Circular image */
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 1px solid #00c3ff; /* Light blue border */
+}
+
+.official-card:hover {
+  transform: scale(1.05); /* Subtle hover effect */
+  box-shadow: 0 5px 10px rgba(0, 195, 255, 0.4); /* Blue shadow */
+}
+
+.official-card h2 {
+  margin: 0;
+  font-size: 0.9rem; /* Smaller font */
+  color: #00c3ff;
+}
+
+.official-card p {
+  margin: 5px 0 0;
+  font-size: 0.8rem; /* Smaller font */
+  color: white;
+}
+
+/* Grid Layout for Official Row */
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Adjusted size */
+  gap: 10px;
+  width: 90%;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

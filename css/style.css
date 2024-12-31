@@ -2866,7 +2866,7 @@ p {
   position: absolute;
   border-radius: 50%;
   pointer-events: none;
-  animation: pop 5s ease-out forwards;
+  animation: pop 8s ease-out forwards;
 }
 
 @keyframes pop {
@@ -2893,6 +2893,23 @@ p {
   height: 100%;
   pointer-events: none;
   z-index: 999; /* Fireworks appear below the modal */
+  display: block; /* Ensures it covers the entire area */
+  overflow: hidden; /* Prevents overflow from any fireworks animation */
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  #firework-container {
+    width: 100%; /* Ensures full width on smaller screens */
+    height: 100%; /* Ensures full height on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  #firework-container {
+    width: 100%; /* Ensures full width for very small screens */
+    height: 100%; /* Full height for small screens */
+  }
 }
 
 /* Modal */

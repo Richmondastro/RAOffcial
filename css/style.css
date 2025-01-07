@@ -2359,7 +2359,7 @@ p {
     max-width: 150px;
   }
   .set-bg {
-    background-position: top right;
+    background-position:  center;
   }
   .nav-logo {
     width: 70px;

@@ -3012,3 +3012,102 @@ p {
 }
 
 
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-title h2 {
+  color: #ffffff;
+  font-size: 32px;
+}
+
+.section-title p {
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.instructions {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+
+.instructions h3,
+.instructions h4 {
+  color: #000000;
+  margin-top: 20px;
+}
+
+.instructions p,
+.instructions li {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.instructions ul,
+.instructions ol {
+  padding-left: 20px;
+}
+
+.registration-form-inner {
+  background-color: #1f1f28;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.registration-form-inner label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 500;
+  color: #000000;
+}
+
+.registration-form-inner input,
+.registration-form-inner textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border-radius: 8px;
+  border: 1px solid #ffffff;
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.registration-form-inner input::placeholder,
+.registration-form-inner textarea::placeholder {
+  color: #bbbbbb;
+}
+
+.registration-form-inner textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.registration-form-inner button[type="submit"] {
+  margin-top: 20px;
+  background-color: #00aaff;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.registration-form-inner button[type="submit"]:hover {
+  background-color: #0088cc;
+}
+
+#formMsg {
+  color: #00ffcc;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+
+

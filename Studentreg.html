@@ -30,7 +30,6 @@
     />
   </head>
   <body>
-
     <!--<div id="snow-container">
        Snowflakes will be generated here by JavaScript 
     </div>-->
@@ -59,10 +58,10 @@
                   <li>
                     <a href="/"> Home </a>
                   </li>
-                  <li>
-                    <a href="https://darkedge.assarc.org/"> Dark Edge </a>
-                  </li>
                   <li class="active">
+                    <a href="#">Registration</a>
+                  </li>
+                  <li>
                     <a href="./achievements.html"> Achievements </a>
                   </li>
                   <li>
@@ -121,87 +120,193 @@
     </div>
     <!-- Breadcrumb End -->
     <!-- Registration Form Begin -->
-<section class="registration-form spad">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-10">
-        <div class="section-title callto__text">
-          <h2>Welcome, Future Space Explorer!</h2>
-          <p>We're excited that you're interested in joining our astronomy society. Please fill out this form so we can learn more about you and help you begin your cosmic journey.</p>
-        </div>
-                <!-- Instructions Section -->
-                <div class="instructions">
-                  <h4>Important Information:</h4>
-                  <h3><strong>Dates and Timings of Lectures:</strong> Tuesday and Thursday at 2:00 p.m. – 3:30 p.m.</h3>
-                  
-                  <h4>How to Prepare Your Notebook:</h4>
-                  <h3>We will be teaching the following topics. Please take a 400-page CR book and divide it as follows:</h3>
-                  <ol>
-                    <li>Fundamental Astronomy - 50 pages</li>
-                    <li>Space Technology and Rocketry – 100 pages</li>
-                    <li>Astrophysics and Cosmology - 100 pages</li>
-                    <li>Observational Astronomy - 75 pages</li>
-                    <li>Advanced Concepts & Competitions Preparation - 75 pages</li>
-                  </ol>
-      
-                  <h3>Procedure of the Society:</h4>
-                  <ul>
-                    <li>Members must attend one of the two training days. (If you are unable to participate, please notify us via WhatsApp.)</li>
-                    <li>The notes provided must be completed and will be checked daily.</li>
-                    <li>Every two months, you will be given a paper on the topics taught.</li>
-                    <li>Disciplinary issues may result in removal from the association.</li>
-                    <li>Top scorers in the “AstroMaster Challenge” will receive a valuable certificate at the SYNODIC Annual Astronomy Camp.</li>
-                  </ul>
-                </div>
-
-        <!-- Registration Form -->
-<form id="studentForm" class="registration-form-inner">
-  <div class="row">
-    <div class="col-lg-6 mb-3">
-      <label for="fullname" style="color: white;">Full Name</label>
-      <input type="text" id="fullname" name="fullname" placeholder="Full Name" required />
-    </div>
-    <div class="col-lg-6 mb-3">
-      <label for="birthday" style="color: white;">Birthday</label>
-      <input type="date" id="birthday" name="birthday" required />
-    </div>
-    <div class="col-lg-6 mb-3">
-      <label for="contact" style="color: white;">Contact Number</label>
-      <input type="tel" id="contact" name="contact" placeholder="Contact Number" required />
-    </div>
-    <div class="col-lg-6 mb-3">
-      <label for="grade" style="color: white;">Grade</label>
-      <input type="text" id="grade" name="grade" placeholder="Grade" required />
-    </div>
-    <div class="col-lg-6 mb-3">
-      <label for="admission" style="color: white;">Admission Number</label>
-      <input type="text" id="admission" name="admission" placeholder="admission Number" required />
-    </div>
-    <div class="col-lg-6 mb-3">
-      <label for="email" style="color: white;">Email Address</label>
-      <input type="email" id="email" name="email" placeholder="Email Address" required />
-    </div>
-            <div class="col-lg-12 text-center">
-              <button type="submit" class="site-btn">Register Now</button>
+    <section class="registration-form spad">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="section-title callto__text">
+              <h2>Welcome, Future Space Explorer!</h2>
+              <p>
+                We're excited that you're interested in joining our astronomy
+                society. Please fill out this form so we can learn more about
+                you and help you begin your cosmic journey.
+              </p>
             </div>
+            <!-- Instructions Section -->
+            <div class="instructions">
+              <h4>Important Information:</h4>
+              <h3>
+                <strong>Dates and Timings of Lectures:</strong> Tuesday and
+                Thursday at 2:00 p.m. – 3:30 p.m.
+              </h3>
+              <h4>How to Prepare Your Notebook:</h4>
+              <h3>
+                We will be teaching the following topics. Please take a 400-page
+                CR book and divide it as follows:
+              </h3>
+              <ol>
+                <li>Fundamental Astronomy - 50 pages</li>
+                <li>Space Technology and Rocketry – 100 pages</li>
+                <li>Astrophysics and Cosmology - 100 pages</li>
+                <li>Observational Astronomy - 75 pages</li>
+                <li>Advanced Concepts & Competitions Preparation - 75 pages</li>
+              </ol>
+              <h3>Procedure of the Society:</h3>
+              <ul>
+                <li>
+                  Members must attend one of the two training days. (If you are
+                  unable to participate, please notify us via WhatsApp.)
+                </li>
+                <li>
+                  The notes provided must be completed and will be checked
+                  daily.
+                </li>
+                <li>
+                  Every two months, you will be given a paper on the topics
+                  taught.
+                </li>
+                <li>
+                  Disciplinary issues may result in removal from the
+                  association.
+                </li>
+                <li>
+                  Top scorers in the “AstroMaster Challenge” will receive a
+                  valuable certificate at the SYNODIC Annual Astronomy Camp.
+                </li>
+              </ul>
+            </div>
+            <!-- Registration Form -->
+            <form
+              id="studentForm"
+              class="registration-form-inner"
+              action="https://script.google.com/macros/s/AKfycbwTrdRi7Z6XixXhDQLp5nTW6BJ53Qf6_r9PEpRsdrFq69o_E8CiWyNkgEK9nyV1DVBFFQ/exec"
+              method="POST"
+            >
+              <div class="row">
+                <div class="col-lg-6 mb-3">
+                  <label for="fullname" style="color: white">Full Name</label>
+                  <input
+                    type="text"
+                    id="fullname"
+                    name="fullname"
+                    placeholder="Full Name"
+                    required
+                  />
+                </div>
+                <div class="col-lg-6 mb-3">
+                  <label for="birthday" style="color: white">Birthday</label>
+                  <input type="date" id="birthday" name="birthday" required />
+                </div>
+                <div class="col-lg-6 mb-3">
+                  <label for="contact" style="color: white"
+                    >Contact Number</label
+                  >
+                  <input
+                    type="tel"
+                    id="contact"
+                    name="contact"
+                    placeholder="Contact Number"
+                    required
+                  />
+                </div>
+                <div class="col-lg-6 mb-3">
+                  <label for="grade" style="color: white">Grade</label>
+                  <input
+                    type="text"
+                    id="grade"
+                    name="grade"
+                    placeholder="Grade"
+                    required
+                  />
+                </div>
+                <div class="col-lg-6 mb-3">
+                  <label for="admission" style="color: white"
+                    >Admission Number</label
+                  >
+                  <input
+                    type="text"
+                    id="admission"
+                    name="admission"
+                    placeholder="admission Number"
+                    required
+                  />
+                </div>
+                <div class="col-lg-6 mb-3">
+                  <label for="email" style="color: white">Email Address</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Email Address"
+                    required
+                  />
+                </div>
+                <div class="col-lg-12 text-center">
+                  <button type="submit" class="site-btn">Register Now</button>
+                </div>
+              </div>
+            </form>
+            <div id="formMsg" class="text-center mt-3"></div>
           </div>
-        </form>
-        <div id="formMsg" class="text-center mt-3"></div>
+        </div>
+      </div>
+    </section>
+    <!-- Registration Form End -->
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal" style="display: none">
+      <div class="modal-content">
+        <h2 class="text-white">Submission Successful</h2>
+        <p>
+          <span class="bg-success text-white rounded p-1">
+            Your form was submitted successfully.
+          </span>
+          <br /><br />
+          Thank you!
+        </p>
+        <p class="text-info">
+          Join Whatsapp Group : <br />
+          <a href="https://wa.me/message/7OL2YEIG3EJYC1"
+            ><i class="fa fa-whatsapp"></i> Click Here</a
+          >
+        </p>
+
+        <button
+          class="modal-btn primary-btn"
+          onclick="closeModal('successModal')"
+        >
+          Close
+        </button>
       </div>
     </div>
-  </div>
-</section>
-<!-- Registration Form End -->
 
-<script>
-  document.getElementById('studentForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-    const formMsg = document.getElementById('formMsg');
-    formMsg.innerHTML = "<p style='color:green;'>Thank you for registering! We’ll be in touch soon.</p>";
-    this.reset();
-  });
-</script>
+    <!-- Failure Modal -->
+    <div id="failureModal" class="modal" style="display: none">
+      <div class="modal-content">
+        <h2 class="text-white">Submission Failed</h2>
+        <br />
+        <p>
+          <span class="text-warning bg-danger rounded p-1">
+            There was an issue submitting your form.
+          </span>
+          <br /><br />
+          <span class="text-info">
+            Please try again or contact us for help.
+          </span>
+        </p>
+        <button
+          class="modal-btn primary-btn"
+          onclick="closeModal('failureModal')"
+        >
+          Close
+        </button>
+      </div>
+    </div>
 
+    <!-- Spinner -->
+    <div id="spinner" style="display: none">
+      <div class="registration-loader"></div>
+    </div>
 
     <!-- Footer Section Begin -->
     <footer class="footer">
@@ -249,6 +354,63 @@
     </footer>
     <!-- Footer Section End -->
     <!-- Js Plugins -->
+
+    <script>
+      // Show spinner function
+      function showSpinner() {
+        const spinner = document.getElementById("spinner");
+        if (spinner) spinner.style.display = "block";
+      }
+
+      // Hide spinner function
+      function hideSpinner() {
+        const spinner = document.getElementById("spinner");
+        if (spinner) spinner.style.display = "none";
+      }
+
+      // Show modal function
+      function showModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (modal) modal.style.display = "block";
+      }
+
+      // Close modal function
+      function closeModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (modal) modal.style.display = "none";
+      }
+
+      // Handle form submission
+      document
+        .getElementById("studentForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          showSpinner();
+
+          const form = e.target;
+          const data = new FormData(form);
+          const action = form.action;
+
+          fetch(action, {
+            method: "POST",
+            body: data,
+          })
+            .then((response) => response.json())
+            .then((result) => {
+              hideSpinner();
+              if (result.result === "success") {
+                showModal("successModal");
+                form.reset();
+              } else {
+                showModal("failureModal");
+              }
+            })
+            .catch(() => {
+              hideSpinner();
+              showModal("failureModal");
+            });
+        });
+    </script>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>

@@ -176,7 +176,12 @@
               </ul>
             </div>
             <!-- Registration Form -->
-            <form id="studentForm" class="registration-form-inner">
+            <form
+              id="studentForm"
+              class="registration-form-inner"
+              action="https://script.google.com/macros/s/AKfycbxZlK8oKMRidGS4SoVhZFXp_7d-0Iz8jPaah4V1vLRAeT5llO-2JKki58BzMAFhsikBGQ/exec"
+              method="POST"
+            >
               <div class="row">
                 <div class="col-lg-6 mb-3">
                   <label for="fullname" style="color: white">Full Name</label>
@@ -248,17 +253,60 @@
     </section>
     <!-- Registration Form End -->
 
-    <script>
-      document
-        .getElementById("studentForm")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-          const formMsg = document.getElementById("formMsg");
-          formMsg.innerHTML =
-            "<p style='color:green;'>Thank you for registering! We’ll be in touch soon.</p>";
-          this.reset();
-        });
-    </script>
+    <!-- Success Modal -->
+    <div id="successModal" class="modal" style="display: none">
+      <div class="modal-content">
+        <h2 class="text-white">Submission Successful</h2>
+        <p>
+          <span class="bg-success text-white rounded p-1">
+            Your form was submitted successfully.
+          </span>
+          <br /><br />
+          Thank you!
+        </p>
+        <p class="text-info">
+          Join Whatsapp Group : <br />
+          <a href="https://wa.me/message/7OL2YEIG3EJYC1"
+            ><i class="fa fa-whatsapp"></i> Click Here</a
+          >
+        </p>
+
+        <button
+          class="modal-btn primary-btn"
+          onclick="closeModal('successModal')"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+
+    <!-- Failure Modal -->
+    <div id="failureModal" class="modal" style="display: none">
+      <div class="modal-content">
+        <h2 class="text-white">Submission Failed</h2>
+        <br />
+        <p>
+          <span class="text-warning bg-danger rounded p-1">
+            There was an issue submitting your form.
+          </span>
+          <br /><br />
+          <span class="text-info">
+            Please try again or contact us for help.
+          </span>
+        </p>
+        <button
+          class="modal-btn primary-btn"
+          onclick="closeModal('failureModal')"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+
+    <!-- Spinner -->
+    <div id="spinner" style="display: none">
+      <div class="registration-loader"></div>
+    </div>
 
     <!-- Footer Section Begin -->
     <footer class="footer">
@@ -306,6 +354,63 @@
     </footer>
     <!-- Footer Section End -->
     <!-- Js Plugins -->
+
+    <script>
+      // Show spinner function
+      function showSpinner() {
+        const spinner = document.getElementById("spinner");
+        if (spinner) spinner.style.display = "block";
+      }
+
+      // Hide spinner function
+      function hideSpinner() {
+        const spinner = document.getElementById("spinner");
+        if (spinner) spinner.style.display = "none";
+      }
+
+      // Show modal function
+      function showModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (modal) modal.style.display = "block";
+      }
+
+      // Close modal function
+      function closeModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (modal) modal.style.display = "none";
+      }
+
+      // Handle form submission
+      document
+        .getElementById("studentForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          showSpinner();
+
+          const form = e.target;
+          const data = new FormData(form);
+          const action = form.action;
+
+          fetch(action, {
+            method: "POST",
+            body: data,
+          })
+            .then((response) => response.json())
+            .then((result) => {
+              hideSpinner();
+              if (result.result === "success") {
+                showModal("successModal");
+                form.reset();
+              } else {
+                showModal("failureModal");
+              }
+            })
+            .catch(() => {
+              hideSpinner();
+              showModal("failureModal");
+            });
+        });
+    </script>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
